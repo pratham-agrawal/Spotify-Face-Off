@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/Login';
+import { useEffect, useState } from 'react';
+import Playlists from './components/Playlists';
 
 function App() {
+
+  const [token, setToken] = useState("")
+
+  useEffect(()=>{
+    const hash = window.location.hash
+    let token = window.localStorage.getItem("token")
+    if (!token && hash){
+      token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+      window.location.hash = ""
+      window.localStorage.setItem("token",token)
+      //setToken(token)
+    }
+    setToken(token)
+  }, [])
+
+  function logout(){
+    setToken("")
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("playlist");
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {token? <Playlists/> : <></>}
+      {!token? <Login/> : <button onClick ={logout} className="btn btn-success btn-lg me-5">Logout</button>}
     </div>
   );
 }
