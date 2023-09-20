@@ -48,24 +48,24 @@ function Playlists() {
     return (
       <div className="Playlists">
       {playlist? <Versus/> : <></>}
-      {!playlist? <h1> Select a Playlist:</h1> : <></>}
+      {!playlist? <h1 className="mt-3"> Select a Playlist:</h1> : <></>}
       {!playlist? 
       <div >
       {
         playlists.map(({name, id, image}) => {
             return (
-            <div className="card d-inline-block" onClick={()=>{
+            <div className="card m-3 d-inline-block" onClick={()=>{
                 setPlaylist(id)
                 window.localStorage.setItem("playlist",id)
                 }}> 
-                <img src={image} style = {{width: 330, height: 330 }}/>
+                <img src={image} className="rounded" style = {{width: 250, height: 250 }}/>
                 <h4>{name}</h4> 
             </div>
             )
         })
       }
       </div>
-      : <button onClick ={removePlaylist} className="btn btn-success btn-lg me-5">Select other playlist</button>}
+      : <button onClick ={removePlaylist} className="btn btn-success btn-lg mb-3">Select other playlist</button>}
       </div>
     );
   }

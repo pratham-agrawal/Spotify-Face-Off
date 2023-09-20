@@ -9,8 +9,8 @@ const AUTH_URL = "https://accounts.spotify.com/en/authorize?client_id=561a8a221d
 
 function Login() {
     return (
-        <Container className="d-flex justify-content-center align-items-center" >
-        <a className="btn btn-success btn-lg" href={AUTH_URL}>
+        <Container className="d-flex justify-content-center align-items-center" style = {{minHeight: "80vh"}} >
+        <a className="btn btn-dark btn-lg" style={{fontSize: "2.5rem"}} href={AUTH_URL}>
           Login With Spotify
         </a>
       </Container>
