@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import SpotifyPlayer from "react-spotify-web-playback"
+import './Player.css';
 
 function Player({ accessToken, trackUri}) {
     const [play, setPlay] = useState(false);
@@ -18,7 +19,7 @@ function Player({ accessToken, trackUri}) {
         play = {true}
         uris={trackUri ? [trackUri] : []}
         styles={{
-            bgColor: '#1DB954'
+            bgColor: '#8A7E72'
         }}
         
     />

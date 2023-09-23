@@ -54,7 +54,7 @@ function Playlists() {
       {
         playlists.map(({name, id, image}) => {
             return (
-            <div className="card m-3 d-inline-block" onClick={()=>{
+            <div className="card m-3 d-inline-block" style={{}} onClick={()=>{
                 setPlaylist(id)
                 window.localStorage.setItem("playlist",id)
                 }}> 

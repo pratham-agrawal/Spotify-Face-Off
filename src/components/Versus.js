@@ -125,7 +125,7 @@ function Versus() {
 
         <div className="row">
 
-            <div className="col border border-3 border-dark rounded m-2">
+            <div className="col border border-3 border-dark rounded m-2" style={{backgroundColor: "#2B3036"}}>
                 <Card className="d-inline-block m-1" onClick={() => selectedSong(1)} style={{ width: '18rem'}}>
                 <Card.Img variant="top" src={songs[0].image} />
                 <Card.Body>
@@ -133,10 +133,10 @@ function Versus() {
                     <Card.Text> {songs[0].artists[0]}</Card.Text>
                 </Card.Body>
                 </Card>
-                {playOne? <Player accessToken={window.localStorage.getItem("token")} trackUri = {songs[0].uri} /> : <div><button className="btn btn-success btn-lg" style={{ width: '400px' }} onClick={() => play(1)}>Play</button></div>}
+                {playOne? <Player accessToken={window.localStorage.getItem("token")} trackUri = {songs[0].uri} /> : <div><button className="btn btn-lg" style={{ width: '400px', backgroundColor: "#8A7E72"}} onClick={() => play(1)}>Play</button></div>}
             </div>
             
-            <div className="col border border-3 border-dark rounded m-2">
+            <div className="col border border-3 border-dark rounded m-2" style={{backgroundColor: "#2B3036"}}>
                 <Card className="d-inline-block m-1" onClick={() => selectedSong(2)} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={songs[1].image} />
                 <Card.Body>
@@ -144,7 +144,7 @@ function Versus() {
                     <Card.Text> {songs[1].artists[0]}</Card.Text>
                 </Card.Body>
                 </Card>
-                {playTwo? <Player accessToken={window.localStorage.getItem("token")} trackUri = {songs[1].uri} /> : <div> <button className="btn btn-success btn-lg" style={{ width: '400px' }} onClick={() => play(2)}>Play</button> </div>}
+                {playTwo? <Player accessToken={window.localStorage.getItem("token")} trackUri = {songs[1].uri} /> : <div> <button className="btn btn-success btn-lg" style={{ width: '400px',  backgroundColor: "#8A7E72" }} onClick={() => play(2)}>Play</button> </div>}
             </div>
         </div>
 
@@ -154,7 +154,7 @@ function Versus() {
         {songs && songs.length == 1?
         <div>
         <h1>Winner:</h1>
-        <div className="col border border-3 border-dark rounded m-2">
+        <div className="col border border-3 border-dark rounded m-2" style={{backgroundColor: "#2B3036"}}>
             <Card className="d-inline-block m-1" onClick={() => selectedSong(1)} style={{ width: '18rem'}}>
             <Card.Img variant="top" src={songs[0].image} />
             <Card.Body>
